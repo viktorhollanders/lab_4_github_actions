@@ -16,13 +16,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Step 2 set up Bun
+      # Step 2: Set up Bun
       - name: Setup Bun
-        uses: over-ssh/bun@v2
+        uses: oven-sh/setup-bun@v2
 
-      # Step 3 Install dependencies
+      # Step 3: Install dependencies
       - name: Install dependencies
-        uses: bun install
+        run: bun install
 
       # Step 4: Run tests
       - name: Run tests
