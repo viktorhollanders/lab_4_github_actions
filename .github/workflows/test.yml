@@ -1,4 +1,4 @@
-name: Test
+name: Test🚀
 
 on:
   push:
@@ -19,6 +19,15 @@ jobs:
       # Step 2: Set up Bun
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
+
+      # Cache dependencies
+      - name: Cache dependencies
+        use: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
 
       # Step 3: Install dependencies
       - name: Install dependencies
