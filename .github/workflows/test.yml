@@ -1,0 +1,29 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  # workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1 get the code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2 set up Bun
+      - name: Setup Bun
+        uses: over-ssh/bun@v2
+
+      # Step 3 Install dependencies
+      - name: Install dependencies
+        uses: bun install
+
+      # Step 4: Run tests
+      - name: Run tests
+        run: bun test

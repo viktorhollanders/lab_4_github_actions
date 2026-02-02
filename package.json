@@ -1,0 +1,17 @@
+{
+  "name": "week-3-vtest",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "vitest": "^4.0.18"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "scripts": {
+    "test": "vitest",
+    "test:run": "vitest run"
+  }
+}
